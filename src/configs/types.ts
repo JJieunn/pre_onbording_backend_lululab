@@ -1,19 +1,28 @@
 type ReservationInfo = {
-  reservationName: string;
-  reservationNumber: number;
-  phoneNumber: string;
-  email: string;
-  patientName: string;
+  reservation_name: string;
+  reservation_number?: number;
+  patient_name: string;
+  birth: string;
   date: Date;
   time: string;
-  hospital: string;
-  clinicType: string;
+  hospital_id: number;
+  department_id: number;
+  clinic_type_id: number;
 }
 
 
 type GetSearchAndList = {
-  reservationName?: string;
-  reservationNumber?: number;
+  reservation_name?: string;
+  reservation_number?: number;
 }
 
-export { GetSearchAndList, ReservationInfo }
+
+type UpdateReservation = {
+  patient_name: string;
+  date: Date;
+  time: string;
+  clinic_type: string;
+}
+
+
+export { GetSearchAndList, ReservationInfo, UpdateReservation }
