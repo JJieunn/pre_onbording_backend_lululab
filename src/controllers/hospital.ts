@@ -7,8 +7,8 @@ const getHospitalList = async (req: Request, res: Response) => {
   try {
     const hospitalList = await hospitalService.getHospitalList()
     res.status(200).json(hospitalList)
-  } catch (error) {
-    console.log(error)
+  } catch (error: any) {
+    res.status(error.status || 500).json({ error: error.message })
   }
 }
 
@@ -19,8 +19,8 @@ const detailInfoByHospital = async (req: Request, res: Response) => {
   try{
     const [hospitalInfo] = await hospitalService.detailInfoByHospital(hospitalId)
     res.status(200).json(hospitalInfo)
-  } catch (error) {
-    console.log(error)
+  } catch (error: any) {
+    res.status(error.status || 500).json({ error: error.message })
   }
 }
 
@@ -29,8 +29,8 @@ const getClinicTypes = async (req: Request, res: Response) => {
   try {
     const clinicTypes = await hospitalService.getClinicTypes()
     res.status(200).json(clinicTypes)
-  } catch (error) {
-    console.log(error)
+  } catch (error: any) {
+    res.status(error.status || 500).json({ error: error.message })
   }
 }
 

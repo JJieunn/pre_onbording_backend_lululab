@@ -1,25 +1,28 @@
 import myDataSource from "../configs/common"
 
-const findReservationNumber = async (userId: any) => {
+const reservationNumberCheck = async (reservationNumber: string) => {
   return await myDataSource.query(`
-    SELECT reservation_number FROM reservations WHERE user_id = ?
-  `, [userId])
+    SELECT 
+      r.id, r.status_id,
+      s.name AS status
+    FROM reservations r
+    JOIN statuses s ON r.status_id = s.id
+    WHERE reservation_number = ?
+  `, [reservationNumber])
 }
 
-const findClinicTypeIdByTypeName = async (clinicTypeName: string) => {
+const getClinicTypeIdByTypeName = async (clinicTypeName: string) => {
   return await myDataSource.query(`
     SELECT id FROM clinic_types WHERE name = ?
   `, [clinicTypeName])
 }
 
-const updateReservation = async (reservationNumber: number, updateQuery: string) => {
-  console.log('number - ', reservationNumber, 'query - ', updateQuery)
-
-  myDataSource.query(`
+const updateReservation = async (reservationNumber: string, updateQuery: string) => {
+  await myDataSource.query(`
     UPDATE reservations SET
     ${updateQuery}
     WHERE reservation_number = ?
   `, [reservationNumber])
 }
 
-export default { findReservationNumber, findClinicTypeIdByTypeName, updateReservation }
+export default { reservationNumberCheck, getClinicTypeIdByTypeName, updateReservation }

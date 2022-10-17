@@ -7,6 +7,6 @@ const router = express.Router()
 
 router.get('/reservation-list', listController.getSearchAndList)
 router.post('/reserve', reserveController.createReservation)
-router.post('/update', updateController.updateReservation)
+router.post('/update/:reservationNumber', updateController.updateReservation)
 
 export default router

@@ -18,7 +18,7 @@ type GetSearchAndList = {
 
 
 type UpdateReservation = {
-  patient_name: string;
+  patient_name?: string;
   date: Date;
   time: string;
   clinic_type: string;

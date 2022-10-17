@@ -24,7 +24,8 @@ const createReservation = async ( userId: any, reservationNumber: string, reserv
   await myDataSource.query(`
     INSERT INTO reservations (user_id, reservation_number, patient_name, birth, date, time, hospital_id, department_id, clinic_type_id)
     VALUES (?,?,?,?,?,?,?,?,?)
-    `, [userId, reservationNumber, reserveData.patient_name, reserveData.birth, reserveData.date, reserveData.time, reserveData.hospital_id, reserveData.department_id, reserveData.clinic_type_id])
+    `, [userId, reservationNumber, reserveData.patient_name, reserveData.birth, reserveData.date,
+        reserveData.time, reserveData.hospital_id, reserveData.department_id, reserveData.clinic_type_id])
 }
 
 export default { userCheck, timeCheck, patientCheck, createReservation }
