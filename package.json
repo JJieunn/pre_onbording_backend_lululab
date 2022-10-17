@@ -1,0 +1,40 @@
+{
+  "name": "pre_onbording_backend_lululab",
+  "version": "1.0.0",
+  "description": "hospital reservation app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc -p ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJieunn/pre_onbording_backend_lululab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJieunn/pre_onbording_backend_lululab/issues"
+  },
+  "homepage": "https://github.com/JJieunn/pre_onbording_backend_lululab#readme",
+  "dependencies": {
+    "dbmate": "^1.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.11.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.10",
+    "typescript": "^4.8.4"
+  }
+}
