@@ -91,7 +91,7 @@
 ### Git Clone
 
 ```bash
-$ git clone https://github.com/JJieunn/pre_onbording_backend_lululab  
+$ git clone https://github.com/JJieunn/pre_onbording_backend_lululab.git 
 $ cd pre_onbording_abckend_lululab
 ```
 ### Installation
