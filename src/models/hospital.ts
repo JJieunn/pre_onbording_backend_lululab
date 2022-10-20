@@ -22,7 +22,7 @@ const getClinicTypes = async () => {
 const detailInfoByHospital = async (hospitalId: string | number) => {
   return await myDataSource.query(`
     SELECT 
-      h.id AS hospital_id, h.name, h.open, h.close, h.lunch_time, h.time_interval AS diagnosis_interval,
+      h.id AS hospital_id, h.name, h.address, h.open, h.close, h.lunch_time, h.time_interval AS diagnosis_interval,
       d.id AS department_id, d.name AS department,
       o.saturday AS saturday_open,
       o.saturday_close_time,

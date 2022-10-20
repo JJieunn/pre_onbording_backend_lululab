@@ -6,6 +6,7 @@ const getSearchAndList = async (searchKeyword: any): Promise<object[]> => {
   SELECT 
     r.id, r.reservation_number,
     r.patient_name,
+    r.birth,
     DATE_FORMAT(r.date, "%Y-%m-%d") AS date,
     r.time,
     u.name AS reservation_name, u.phone_number, u.email,
